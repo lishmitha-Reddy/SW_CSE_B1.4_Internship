@@ -8,29 +8,57 @@
 <body>
     <p> Video Tag</p>
     <!--Videos Format : mp4|webm|ogg -->
+
     <video src="sample-5s-360p.mp4 " controls>
         Your browser does not support the video tag.
     </video> 
+
     <video src="sample-5s-360p.webm" controls>
         Your browser does not support the video tag.
     </video> 
+
     <!--W/o controls the video appers but the user cannot play the video
     Javacsript can start playing the video-->
     <!-- Width & height-->
+
      <video src="sample-5s-360p.mp4 " width="400px" height="200px" controls>
         Your browser does not support the video tag.
     </video>
+
       <!-- autoplay -->
+
        <video src="sample-5s-360p.mp4  " width="400px" height="200px" autoplay controls>
         Your browser does not support the video tag.
     </video>
+
     <!--muted-->
+
      <video src="sample-5s-360p.mp4 " width="400px" height="200px" muted controls>
         Your browser does not support the video tag.
     </video>
+
     <!-- loop -->
+
      <video src="sample-5s-360p.mp4 " width="400px" height="200px" loop controls>
         Your browser does not support the video tag.
     </video>
+
+    <!--Poster-->
+
+     <video src="sample-5s-360p.mp4 " width="400px" height="200px" poster="poster image.png" controls>
+        Your browser does not support the video tag.
+    </video>
+
+    <!--preload-->
+
+    <!-- none: Dont preload ;load only when needed-->
+     <!-- meta data : Load only information like duration,dimensions etc -->
+      <!--auto: Automatic; Browser load video immediately -->
+
+     <video src="sample-5s-360p.mp4 " width="400px" height="200px" poster=" poster image.png"
+     preload="none" controls>
+        Your browser does not support the video tag.
+    </video>
+    
 </body>
 </html>
