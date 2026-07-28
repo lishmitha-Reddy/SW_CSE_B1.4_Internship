@@ -3,47 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Async and Await Example</title>
+    <title>Callback function</title>
 </head>
 <body>
-    <button id="fetchBtn">Fetch User</button>
+    <button id="runBtn">Run Task</button>
     <pre id="output"></pre>
     <script>
         const output = document.getElementById("output");
-        const fetchBtn = document.getElementById("fetchBtn");
+        const runBtn = document.getElementById("runBtn");
 
         function log(msg){
             output.textContent += msg + "\n";
             console.log(msg);
         }
 
-       function fetchUser(){
-        return new Promise((resolve)=>{
+        function performTask(taskName,callback){
+            log("Task Started: "+taskName);
             setTimeout(()=>{
-                resolve({
-                    name:"Lishmitha",
-                    age:18
-                });
+            log("Task Finished: "+taskName);
+            callback("Result of: "+taskName);
             },1500);
-        });
-       }
-
-       async function loadUser(){
-            try{
-                log("Loading User...");
-                const user = await fetchUser(); 
-
-                log("Name: "+user.name);
-                log("Age: "+user.age);
-            }
-            catch(error){
-                log("Eror: "+error);
-            }
-       }
-
-        fetchBtn.addEventListener("click",() => {
-            output.textContent = "";
-            loadUser();
+        }
+        
+        runBtn.addEventListener("click",() => {
+            performTask("Download data",(result)=>{
+                log("Callback received:"+result);
+            });
         });
     </script>
 </body>
