@@ -3,7 +3,7 @@ function App() {
   return (
     <div>
       <h1> Hello World </h1>
-      <h3> Welcome to my first REACT App.</h3>
+      <h3> Welcome to my first REACT App .</h3>
     </div>
 
   )
